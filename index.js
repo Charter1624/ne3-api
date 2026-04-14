@@ -10,7 +10,8 @@ app.use(cors())           // permite llamadas desde la app mobile
 app.use(express.json())   // para leer el body en JSON
 
 // ── Rutas ─────────────────────────────────
-app.use('/lineas', require('./routes/lineas'))
+app.use('/lineas',    require('./routes/lineas'))
+app.use('/propuestas', require('./routes/propuestas'))
 
 // Ruta de prueba - para verificar que el servidor anda
 app.get('/', (req, res) => {
@@ -24,7 +25,9 @@ app.get('/', (req, res) => {
       'GET  /lineas/:numero',
       'POST /lineas',
       'PATCH /lineas/:numero/estado',
-      'GET  /lineas/:numero/historial'
+      'GET  /lineas/:numero/historial',
+      'GET  /propuestas',
+      'POST /propuestas'
     ]
   })
 })
